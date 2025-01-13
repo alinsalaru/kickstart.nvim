@@ -414,7 +414,7 @@ require('lazy').setup({
                 ['<C-k>'] = lga_actions.quote_prompt(),
                 ['<C-i>'] = lga_actions.quote_prompt { postfix = ' --iglob ' },
                 -- freeze the current list and start a fuzzy search in the frozen list
-                ['<C-space>'] = require('telescope.actions').to_fuzzy_refine,
+                ['<C-f>'] = require('telescope.actions').to_fuzzy_refine,
               },
             },
             -- ... also accepts theme settings, for example:
@@ -964,6 +964,7 @@ require('lazy').setup({
   require 'kickstart.plugins.indent_line',
   require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
+  require 'kickstart.plugins.colorizer',
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
