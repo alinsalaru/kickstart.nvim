@@ -104,6 +104,20 @@ vim.opt.number = true
 --  Experiment for yourself to see if you like it!
 -- vim.opt.relativenumber = true
 
+-- Function to toggle between relative and absolute line numbers
+function ToggleLineNumbers()
+  if vim.wo.relativenumber then
+    vim.wo.relativenumber = false
+    vim.wo.number = true
+  else
+    vim.wo.relativenumber = true
+    vim.wo.number = true
+  end
+end
+
+-- Map the function to a keybinding (e.g., Ctrl-n)
+vim.api.nvim_set_keymap('n', '<leader>nn', ':lua ToggleLineNumbers()<CR>', { desc = 'Toggle Line Numbers', noremap = true, silent = true })
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
